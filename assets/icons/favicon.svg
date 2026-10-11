@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Rajasekhar Vedula | Developer</title>
+  <rect width="64" height="64" rx="14" fill="#163832"/>
+
+  <g transform="translate(32 32) scale(1.12) translate(-29.5 -32)"
+     fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- < -->
+    <path d="M14 22 L5 32 L14 42" stroke="#8EB69B"/>
+    <!-- R -->
+    <path d="M19 21 H25.5 a5.5 5.5 0 0 1 0 11 H19 M19 21 V43 M25.5 32 L31 43" stroke="#E8F5EA"/>
+    <!-- /> -->
+    <path d="M36 43 L41 21 M45 22 L54 32 L45 42" stroke="#8EB69B"/>
+  </g>
+</svg>
