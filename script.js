@@ -119,3 +119,51 @@ const observer = new IntersectionObserver(
 revealElements.forEach((element) => {
     observer.observe(element);
 });
+
+
+const contactForm = document.getElementById("contact-form");
+const sendBtn = document.getElementById("send-btn");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const originalText = sendBtn.textContent;
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending...";
+    formStatus.textContent = "";
+    formStatus.style.color = "";
+
+    try {
+        const response = await fetch(
+            "https://formspree.io/f/xppqybal",
+            {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: {
+                    Accept: "application/json"
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Message submission failed.");
+        }
+
+        formStatus.textContent =
+            "Message sent successfully! I'll get back to you soon.";
+        formStatus.style.color = "green";
+
+        contactForm.reset();
+
+    } catch (error) {
+        formStatus.textContent =
+            "Unable to send your message. Please try again.";
+        formStatus.style.color = "red";
+
+    } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = originalText;
+    }
+});

@@ -1180,3 +1180,14 @@ nav {
         transition: none;
     }
 }
+
+#form-status {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.send-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
